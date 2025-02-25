@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body{
+    background: #7091E6;
+    color: black;
+    font-family: "Dosis", serif;
+}
+
+.App{
+    min-height: 100vh;
+    display: flex;
+}
+
+.sidebar{
+    flex: 2;
+    border-right: 1px solid rgb(100, 100, 100);
+}
+
+.main{
+    flex: 9;
+}
+
+.logo{
+    margin-right: 1rem;
+    margin-top: 1.5rem;
+    width: 100px;
+    height: auto;
+}
+
+.brand{
+    font-size: 4rem;
+}
+
+.upperSec{
+    padding: 2.5rem;
+    border-bottom: 1px solid rgb(100, 100, 100);
+    height: 80%;
+}
+
+.top{
+    display: flex;
+    align-items: center;
+    margin-bottom: 2.5rem
+}
+
+.listItemsImg{
+    width: 20px;
+    height: auto;
+}
+
+.addButton{
+    height: 2rem;
+    padding-right: 1rem;
+}
+
+.midButton{
+    background: #665fb6;
+    border: none;
+    color: white;
+    padding: 1.5rem;
+    font-size: 1.5rem;
+    width: 25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem;
+    margin-bottom: 3rem;
+    border-radius: 0.5rem;
+}
+
+.questions{
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    padding: 1.5rem;
+    width: 25rem;
+    margin: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(98, 98, 98, 1);
+}
+
+.send{
+    width: 20px;
+    height: auto;
+}
