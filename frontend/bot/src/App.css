@@ -91,3 +91,28 @@ body{
     width: 20px;
     height: auto;
 }
+
+.lowerSec{
+    padding: 2rem;
+}
+
+.listItems{
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+    font-size: 1.8rem;
+}
+
+.listItemsImg{
+    margin: 0.8rem;
+    padding-right: 0.8rem;
+    width: 4rem;
+    height: auto;
+}
+
+.listItems:nth-child(1)>.listItemsImg{
+    margin-right: 0.5rem;
+}
+.listItems:nth-child(2)>.listItemsImg{
+    margin-right: 0.75rem;
+}
