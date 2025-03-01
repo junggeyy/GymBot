@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
 }
 
 html {
@@ -16,7 +18,9 @@ body{
 
 .App{
     min-height: 100vh;
+    height: 100vh; 
     display: flex;
+    overflow: hidden;
 }
 
 .sidebar{
@@ -127,27 +131,61 @@ body{
 
 .chats{
     overflow: hidden;
-    overflow-y: scroll;
+    overflow-y: auto;
     scroll-behavior: smooth;
     width: 100%;
     max-width: 70rem;
     height: calc(100vh - 17rem);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Inter', sans-serif;
 }
 
 .chat{
-    margin: 1rem;
-    padding: 2rem 3rem;
-    font-size: 1.2rem;
+    margin: 0.5rem 1rem;
+    padding: 1.5rem 2rem;
+    font-size: 1.4rem;
+    line-height: 1.6;
     display: flex;
     align-items: flex-start;
-    text-align: justify;
+    max-width: 75%;
+    border-radius: 0.8rem;
 }
 
-.chatImg{
-    object-fit: cover;
-    width: 5rem;
-    margin-right: 2rem;
-    border-radius: 0.5rem;
+.chat.user {
+    background: #e1e1e1;
+    color: #333;
+    align-self: flex-end;
+    border-radius: 1rem 1rem 0 1rem;
+    flex-direction: row-reverse;
+}
+
+.chat.bot {
+    background: #665fb6;
+    color: whitesmoke;
+    align-self: flex-start;
+    border-radius: 1rem 1rem 1rem 0;
+}
+.chat .txt {
+    font-size: 1.45rem; 
+    line-height: 1.7; 
+}
+
+.chat img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-left: 0 1rem;
+}
+
+.chat.bot img {
+    margin-right: 1rem;
+    margin-left: 0.5rem;
+}
+
+.chat.user img{
+    margin-left: 1rem;;
 }
 
 .chatFooter{
@@ -165,24 +203,36 @@ body{
     display: flex;
     align-items: center;
     border-radius: 0.5rem;
-    width: 70rem;
+    width: 68rem;
 }
 
-.inp>input{
+.chatInput {
     width: calc(100% - 3rem);
+    min-height: 50px;
+    max-height: 150px; 
     outline: none;
-    padding: 1.25rem;
+    padding: 1.75rem;
     color: rgb(251, 251, 251);
-}
-
-.inp>input, .sendb{
     background: transparent;
     border: none;
+    resize: none; 
+    overflow-y: auto;
+    font-size: 1.2rem;
+    scrollbar-color: #544f93 #6c66aa;
 }
-.inp > input::placeholder {
-    color: #fff9f9; /* You can change this color */
+
+.sendb{
+    background: transparent;
+    border: none;
+    padding: 0.5rem;
+}
+
+.inp > textarea::placeholder {
+    color: #ffffff;
     opacity: 0.5;
 }
+
 .chatFooter>p{
-    margin: 2rem 0;
+    color: black;
+    font-size: 1.2rem;
 }

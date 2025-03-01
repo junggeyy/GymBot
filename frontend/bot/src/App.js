@@ -9,6 +9,12 @@ import userImg from './assets/userimg.png'
 import botImg from './assets/botimg.png'
 
 function App() {
+
+  const autoResize = (e) => {
+    e.target.style.height = "40px"; // Reset height to prevent infinite growth
+    e.target.style.height = e.target.scrollHeight + "px";
+  };
+
   return (
     <div className="App">
       <div className="sidebar">
@@ -27,16 +33,21 @@ function App() {
       </div>
       <div className="main">
         <div className="chats">
-          <div className="chat">
-            <img className="chatImg" src={userImg} alt="" /><p className="txt">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <div className="chat user">
+            <img className="chatImg" src={userImg} alt="" /><p className="txt">Tell me about calorie deficit diet.</p>
           </div>
-          <div className="chat">
-            <img className="chatImg" src={botImg} alt="" /><p className="txt">Hey Muscles! What can I help you with? </p>
+          <div className="chat bot">
+            <img className="chatImg" src={botImg} alt="" /><p className="txt">A calorie deficit diet is based on the principle of consuming fewer calories than your body needs to maintain its current weight. In other words, you burn more calories than you take in, which forces your body to use stored fat for energy. Over time, this leads to weight loss. </p>
           </div>
         </div>
         <div className="chatFooter">
           <div className="inp">
-            <input type="text" placeholder='Ask anything'/><button className="sendb"><img src={sendB} alt="send" className=""/></button>
+            <textarea 
+              className="chatInput" 
+              rows={1} 
+              placeholder="Ask anything..." 
+              onInput={(e) => autoResize(e)}
+            ></textarea><button className="sendb"><img src={sendB} alt="send"/></button>
           </div>
           <p>Generative AI may produce inaccurate results. Always seek a professional for health advice!</p>
         </div>
