@@ -1,15 +1,20 @@
 import userImg from '../assets/userimg.png'
 import botImg from '../assets/botimg.png'
+import {marked} from "marked";
 
-const ChatUI = () => {
+const ChatUI = ({messages}) => {
     return(
         <div className="chats">
-            <div className="chat user">
-                <img className="chatImg" src={userImg} alt="" /><p className="txt">Tell me about calorie deficit diet.</p>
-            </div>
-            <div className="chat bot">
-                <img className="chatImg" src={botImg} alt="" /><p className="txt">A calorie deficit diet is based on the principle of consuming fewer calories than your body needs to maintain its current weight. In other words, you burn more calories than you take in, which forces your body to use stored fat for energy. Over time, this leads to weight loss. </p>
-            </div>
+            {messages.map((chat, index) => (
+                <div key={index} className={`chat ${chat.sender}`}>
+                    <img className="chatImg" src={chat.sender === "user" ? userImg : botImg} alt="" />
+                    {chat.sender === "bot" ? (
+                        <p className="txt" dangerouslySetInnerHTML={{ __html: marked(chat.text) }}></p>
+                    ) : (
+                        <p className="txt">{chat.text}</p>
+                    )}
+                </div>
+            ))}
         </div>
     );
 };

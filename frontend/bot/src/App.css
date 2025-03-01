@@ -137,6 +137,7 @@ body{
     overflow: hidden;
     overflow-y: auto;
     scroll-behavior: smooth;
+    scrollbar-color: #6c66aa #8c89ba00;
     width: 100%;
     max-width: 70rem;
     height: calc(100vh - 10rem);

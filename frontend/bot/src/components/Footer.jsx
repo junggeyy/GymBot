@@ -1,16 +1,28 @@
 import sendB from '../assets/send.svg'
+import {useState} from "react";
+
 const autoResize = (e) => {
     e.target.style.height = "40px"; 
     e.target.style.height = e.target.scrollHeight + "px";
 };
 
 const Footer = ({ onSendMessage}) => {
+
+    const [message, setMessage] = useState("");
+
     const handleKeyDown = (event) => {
         if (event.key === "Enter" && !event.shiftKey) {
-            event.preventDefault(); // Prevent new line
-            onSendMessage(); // Trigger chat start
+            event.preventDefault();
+            sendMessage();
         }
     };
+
+    const sendMessage = () => {
+        if(message.trim() === "")    return; // ignore empty message
+        onSendMessage(message);
+        setMessage("")
+    };
+
     return(
         <div className="chatFooter">
             <div className="inp">
@@ -18,9 +30,12 @@ const Footer = ({ onSendMessage}) => {
                     className="chatInput" 
                     rows={1} 
                     placeholder="Ask anything..." 
-                    onInput={(e) => autoResize(e)}
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    onKeyDown={handleKeyDown}
+                    onInput={autoResize}
                 ></textarea>
-                <button className="sendb" onClick={onSendMessage}>
+                <button className="sendb" onClick={sendMessage}>
                     <img src={sendB} alt="send"/>
                 </button>
             </div>
