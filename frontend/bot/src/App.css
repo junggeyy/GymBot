@@ -20,16 +20,14 @@ body{
     min-height: 100vh;
     height: 100vh; 
     display: flex;
+    /* align-items: center; */
     overflow: hidden;
 }
+
 
 .sidebar{
     flex: 2;
     border-right: 1px solid rgb(100, 100, 100);
-}
-
-.main{
-    flex: 9;
 }
 
 .logo{
@@ -122,11 +120,17 @@ body{
 }
 
 .main{
-    min-height: calc(100vh - 14rem);
+    /* min-height: calc(100vh - 14rem); */
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 6rem 10rem;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    /* margin: 0 auto; */
 }
 
 .chats{
@@ -135,8 +139,9 @@ body{
     scroll-behavior: smooth;
     width: 100%;
     max-width: 70rem;
-    height: calc(100vh - 17rem);
+    height: calc(100vh - 10rem);
     padding: 1rem;
+    margin-top: 2rem;
     display: flex;
     flex-direction: column;
     font-family: 'Inter', sans-serif;
@@ -190,11 +195,14 @@ body{
 
 .chatFooter{
     margin-top: auto;
+    margin-bottom: 2rem;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 1rem;
+    position: relative;
 }
 
 .inp{
@@ -235,4 +243,41 @@ body{
 .chatFooter>p{
     color: black;
     font-size: 1.2rem;
+}
+
+/* landing page */
+.landingPage {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: clac(100vh-10rem);
+    width: 100%;
+    flex-grow: 1;
+}
+
+.landingPageWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.landingPage h1 {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+}
+
+.landingPage p {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 }
