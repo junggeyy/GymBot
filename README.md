@@ -8,9 +8,11 @@ This is a work-in-progress repository of the *GymBot* project with the following
 **Frontend:** Built with REACT and using FastAPI to develop the web version.
 
 **Current UI:**
-![Landing Page](https://github.com/user-attachments/assets/dfe1f450-ec79-446f-835c-4496f0a0694a)
+![Landing Page](https://github.com/user-attachments/assets/c6a36950-7b47-44a9-a49d-74a60cc6aac9)
 
-![Chat UI](https://github.com/user-attachments/assets/ceb721fb-8593-4bb8-932a-dd1ee7ce9da7)
+
+![ChatUI](https://github.com/user-attachments/assets/b398bf76-184f-4052-8661-50bb031769da)
+
 
 
 
