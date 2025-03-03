@@ -1,13 +1,20 @@
-# GYM BOT
+# GYM BOT: AI-Powered Fitness Chatbot
 
-AI-powered chat bot specialized in giving out fitness, workout and lifitng advice to my fellow gym bros!<br>
+An AI-powered chatbot designed to offer personalized fitness, workout, and wellness advice. The chatbot delivers tailored recommendations, workout routines, and health tips in real-time, helping users achieve their fitness goals effectively.<br>
 
-This is a work-in-progress repository of the *GymBot* project with the following tech stack implented:
+Key Features:
 
-**Backend:** Powered by Python using the Gemini API for generating responses based on user input. <br>
-**Frontend:** Built with REACT and using FastAPI to develop the web version.
+* **Backend:** Built using Python and FastAPI, ensuring fast and scalable performance for real-time interactions. <br>
 
-**Current UI:**
+* **Frontend:** Developed a user-friendly interface using React, allowing seamless and intuitive interactions with the chatbot. <br>
+
+* **AI Integration:** Integrated Google's Gemini API to generate intelligent, context-aware responses, providing users with relevant and dynamic fitness advice based on their unique preferences and goals. <br>
+
+Additionally, the chatbot delivers responses with a touch of gymbro humor to keep the experience lighthearted and engaging. 💪 <br>
+
+**Project Phase:** Working on deployment!
+
+**Current UI:** <br>
 ![Landing Page](https://github.com/user-attachments/assets/c6a36950-7b47-44a9-a49d-74a60cc6aac9)
 
 
