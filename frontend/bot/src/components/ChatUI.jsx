@@ -2,7 +2,7 @@ import userImg from '../assets/userimg.png'
 import botImg from '../assets/botimg.png'
 import {marked} from "marked";
 
-const ChatUI = ({messages}) => {
+const ChatUI = ({messages, loading}) => {
     return(
         <div className="chats">
             {messages.map((chat, index) => (
@@ -15,6 +15,16 @@ const ChatUI = ({messages}) => {
                     )}
                 </div>
             ))}
+
+            {loading && (
+                <div className="bot-typing">
+                    <p className="txt">
+                        Bot is typing<span className="dot-one">.</span>
+                        <span className="dot-two">.</span>
+                        <span className="dot-three">.</span>
+                    </p>
+                </div>
+            )}
         </div>
     );
 };

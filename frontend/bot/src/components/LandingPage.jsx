@@ -2,7 +2,7 @@ import ChatUI from "./ChatUI";
 import Footer from "./Footer.jsx";
 import dumbbellLogo from '../assets/dumbbellLogo.png'
 
-const GymBot = ({messages, chatStarted, handleSendMessage}) => {
+const GymBot = ({messages, loading, chatStarted, handleSendMessage}) => {
   return (
     <div className="container">
       {!chatStarted ? (
@@ -14,7 +14,7 @@ const GymBot = ({messages, chatStarted, handleSendMessage}) => {
             </div>
         </div>
       ):(
-        <ChatUI messages={messages} />
+        <ChatUI messages={messages} loading={loading}/>
       )}
       { <Footer onSendMessage={handleSendMessage}/>}
     </div>

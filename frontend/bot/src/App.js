@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react';
 function App() {
   const [messages, setMessages] = useState([]);
   const [chatStarted, setChatStarted] = useState(false); 
+  const [loading, setLoading] = useState(false);
 
     const handleSendMessage = (message) => {
         if (!chatStarted) setChatStarted(true);
@@ -14,6 +15,8 @@ function App() {
             ...prevMessages,
             { sender: "user", text: message },
         ]);
+
+        setLoading(true);
 
         fetch("http://127.0.0.1:8000/chat", {
             method: "POST",
@@ -34,6 +37,9 @@ function App() {
                 ...prevMessages,
                 { sender: "bot", text: "Oops! Something went wrong. Try again!" },
             ]);
+        })
+        .finally(() => {
+          setLoading(false);
         });
     };
 
@@ -64,7 +70,12 @@ function App() {
     <div className="App">
       <SideBar handleSendMessage={handleSendMessage} handleNewSession={handleNewSession}/>
       <div className="main">
-        <LandingPage messages={messages} chatStarted={chatStarted} handleSendMessage={handleSendMessage}/>
+        <LandingPage 
+          messages={messages} 
+          loading={loading} 
+          chatStarted={chatStarted} 
+          handleSendMessage={handleSendMessage}
+        />
       </div>  
     </div>
   );
