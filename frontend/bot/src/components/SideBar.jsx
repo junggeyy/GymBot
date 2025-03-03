@@ -14,7 +14,7 @@ const SideBar = ({handleSendMessage, handleNewSession}) => {
                 <div className="bottom">
                     <button className="questions" onClick={() => handleSendMessage("Tell me about Calorie Deficit diet")}><img src={send} alt ="" className="send"/> Tell me about Calorie Deficit diet</button>
                     <button className="questions" onClick={() => handleSendMessage("What is the best workout split?")}><img src={send} alt ="" className="send"/> What is the best workout split?</button>
-                    <button className="questions" onClick={() => handleSendMessage("Best bicep workouts")}><img src={send} alt ="" className="send"/> Best bicep workout for best pump</button>
+                    <button className="questions" onClick={() => handleSendMessage("Best bicep workouts")}><img src={send} alt ="" className="send"/> Best bicep workouts</button>
                     <button className="questions" onClick={() => handleSendMessage("Challenge me with the hardest workouts")}><img src={send} alt ="" className="send"/>Challenge me with the hardest workouts</button>
                 </div>
             </div>
