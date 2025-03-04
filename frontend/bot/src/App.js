@@ -8,6 +8,8 @@ function App() {
   const [chatStarted, setChatStarted] = useState(false); 
   const [loading, setLoading] = useState(false);
 
+  const apiURL = "https://gymbot-y796.onrender.com/";
+
     const handleSendMessage = (message) => {
         if (!chatStarted) setChatStarted(true);
 
@@ -18,7 +20,7 @@ function App() {
 
         setLoading(true);
 
-        fetch("http://127.0.0.1:8000/chat", {
+        fetch(`${apiURL}`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ user_id: "test_user", message }),
