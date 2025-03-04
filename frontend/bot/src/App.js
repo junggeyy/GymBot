@@ -20,7 +20,7 @@ function App() {
 
         setLoading(true);
 
-        fetch(`${apiURL}`, {
+        fetch(`${apiURL}chat`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ user_id: "test_user", message }),
