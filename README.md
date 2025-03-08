@@ -12,7 +12,7 @@ Key Features:
 
 Additionally, the chatbot delivers responses with a touch of gymbro humor to keep the experience lighthearted and engaging. 💪 <br>
 
-**Project Phase:** Working on deployment!
+**Deployment:** The website is live on [github-pages](https://junggeyy.github.io/GymBot/) with backend deployed on Vercel!
 
 **Current UI:** <br>
 ![Landing Page](https://github.com/user-attachments/assets/c6a36950-7b47-44a9-a49d-74a60cc6aac9)
