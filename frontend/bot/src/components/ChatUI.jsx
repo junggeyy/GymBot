@@ -1,8 +1,19 @@
 import userImg from '../assets/userimg.png'
 import botImg from '../assets/botimg.png'
 import {marked} from "marked";
+import { useEffect, useRef } from "react"
 
 const ChatUI = ({messages, loading}) => {
+    const messagesEndRef = useRef(null)
+
+    const scrollToBottom = () => {
+        messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
+    }
+
+    useEffect(() => {
+        scrollToBottom()
+    }, [messages, loading])
+
     return(
         <div className="chats">
             {messages.map((chat, index) => (
@@ -25,6 +36,7 @@ const ChatUI = ({messages, loading}) => {
                     </p>
                 </div>
             )}
+            <div ref={messagesEndRef} />
         </div>
     );
 };

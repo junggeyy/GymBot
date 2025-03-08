@@ -7,6 +7,7 @@ function App() {
   const [messages, setMessages] = useState([]);
   const [chatStarted, setChatStarted] = useState(false); 
   const [loading, setLoading] = useState(false);
+  const [sidebarVisible, setSidebarVisible] = useState(false);
 
   const apiURL = "https://gymbot-y796.onrender.com/";
 
@@ -67,11 +68,48 @@ function App() {
       return () => window.removeEventListener("beforeunload", handleBeforeUnload);
     }, [chatStarted]);
 
+    const toggleSidebar = () => {
+      setSidebarVisible(!sidebarVisible)
+    };
+
+    const [isMobile, setIsMobile] = useState(false)
+
+    useEffect(() => {
+      const checkMobile = () => {
+        setIsMobile(window.innerWidth <= 900)
+        // On desktop, always show sidebar
+        if (window.innerWidth > 900) {
+          setSidebarVisible(true)
+        }
+      }
+
+      checkMobile()
+  
+      window.addEventListener("resize", checkMobile)
+  
+      return () => window.removeEventListener("resize", checkMobile)
+    }, [])
+
 
   return (
-    <div className="App">
-      <SideBar handleSendMessage={handleSendMessage} handleNewSession={handleNewSession}/>
+    <div className={`App ${sidebarVisible && isMobile ?
+     "sidebar-active" : ""}`}>
+       <div className={`sidebar-container ${sidebarVisible ?
+         "visible" : ""}`}>
+        <SideBar
+          handleSendMessage={handleSendMessage}
+          handleNewSession={handleNewSession}
+          toggleSidebar={toggleSidebar}
+        />
+      </div>
+
       <div className="main">
+        <div className="mobile-menu-toggle">
+          <button onClick={toggleSidebar} className="menu-button">
+            ☰
+          </button>
+        </div>
+
         <LandingPage 
           messages={messages} 
           loading={loading} 
