@@ -9,7 +9,7 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [sidebarVisible, setSidebarVisible] = useState(false);
 
-  const apiURL = "https://gymbot-y796.onrender.com/";
+  const apiURL = "https://gym-i2043oe4d-junggeyys-projects.vercel.app";
 
     const handleSendMessage = (message) => {
         if (!chatStarted) setChatStarted(true);
