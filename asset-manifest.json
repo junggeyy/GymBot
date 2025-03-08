@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/GymBot/static/css/main.a2b15685.css",
+    "main.js": "/GymBot/static/js/main.4d0ad444.js",
+    "static/media/botimg.png": "/GymBot/static/media/botimg.da6e609053b417b75aa3.png",
+    "static/media/userimg.png": "/GymBot/static/media/userimg.ed6849ace95d9e914fb1.png",
+    "static/media/dumbbellLogo.png": "/GymBot/static/media/dumbbellLogo.5219f48d90749ca09db2.png",
+    "static/media/send.svg": "/GymBot/static/media/send.5cc05986cf306ae5d4ce38bf6fdc3def.svg",
+    "index.html": "/GymBot/index.html",
+    "static/media/linkedin.svg": "/GymBot/static/media/linkedin.48c578785988bce75017d928a5dc8a14.svg",
+    "main.a2b15685.css.map": "/GymBot/static/css/main.a2b15685.css.map",
+    "main.4d0ad444.js.map": "/GymBot/static/js/main.4d0ad444.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a2b15685.css",
+    "static/js/main.4d0ad444.js"
+  ]
+}
